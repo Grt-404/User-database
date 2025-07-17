@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading users</title>
+    <link rel="stylesheet" href="/stylesheets/style_1.css" />
+</head>
+
+<body>
+    <a href="/">Back To Home</a>
+    <%if(users.length===0){%>
+        <h1>ADD ATLEAST ONE USER</h1>
+        <%}%>
+
+            <div class="users">
+                <% users.forEach(function(user) { %>
+                    <div class="user">
+                        <div class="image">
+                            <img src="<%= user.image %>" alt="User Image" />
+                        </div>
+                        <div class="fullname">
+                            <%= user.name %>
+                        </div>
+                        <h3 class="gmail">
+                            <%= user.email %>
+                        </h3>
+                        <div class="links">
+                            <a href="/edit/<%= user.id %>">Edit user</a>
+                            <a href="/delete/<%=user.id%>" class="delete">Delete user</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+</body>
+
+</html>

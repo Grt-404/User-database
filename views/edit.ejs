@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Update</title>
+    <link rel="stylesheet" href="/stylesheets/style_2.css">
+</head>
+
+
+<body>
+    <a href="/">Back To Home</a>
+    <form>
+        <h1>Existing Data</h1>
+        <input type="text" name="name" placeholder="Enter your name:" value="<%=user.name%>" />
+        <input type="text" name="email" placeholder="Enter your email id" value="<%=user.email%>">
+        <input type="text" name="image" placeholder="Your image url goes here" value="<%=user.image%>">
+
+    </form>
+    <form action="/edit/<%=user._id%>/update" method="post">
+        <h1>Update Data</h1>
+        <input type="text" name="name" placeholder="Enter your name:" />
+        <input type="text" name="email" placeholder="Enter your email id">
+        <input type="text" name="image" placeholder="Your image url goes here">
+        <button>Update</button>
+
+    </form>
+</body>
+
+</html>
